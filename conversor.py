@@ -1,9 +1,4 @@
 # -*- encoding: utf-8 -*-
-#####Launcher.py ~~> Comienza la ejecución
-import os
-import sys
-import datetime
-import time
 import pprint
 import json
 #vars
@@ -13,13 +8,7 @@ log_nagios_bruto = []
 pp = pprint.PrettyPrinter(indent=4)
 
 #_vars del log
-"""
-old_stdout = sys.stdout
-archivo_log = 'log-.txt'
-print('LOG EN : '+ archivo_log)
-log_file = open(archivo_log,"w")
-sys.stdout = log_file
-"""
+
 #_vars para el diccionario
 log_nagios_pulido = {}
 log_nagios_refinado= {}
@@ -66,11 +55,7 @@ def jsonificador(lineas):
     pp.pprint(log_nagios_pulido)
     guardar_json(log_nagios_pulido)
 
-#Ahora modificamos los nombres de los elementos
-#def modificar_nombres(log_nagios_pulido):
-    #for elemento in log_nagios_pulido:
-        #if elemento =='host_name':
-            
+           
 #Guardamos el archivo json
 def guardar_json(log_nagios_pulido):
     with open('dict.json', 'w') as outfile:
@@ -80,9 +65,4 @@ print(sys.argv[1])
 
 abrir_fichero(file)
 
-"""
-sys.stdout = old_stdout
-
-log_file.close()
-"""
 #exceptions
